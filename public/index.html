@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Telegrom</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but telegrom doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <h1>Mira la consola</h1>
+  <script>
+    const socket = io.connect('http://localhost:3000', {
+      forceNew: true
+    })
+
+    socket.on('message', (data) => {
+      console.log(data)
+    })
+  </script>
+</body>
+
+</html>
